@@ -1,8 +1,11 @@
-function searchReducer (state = { movies: ["Tommy Boy", "Black Sheep"] }, action) {
+function searchReducer (state = { loading: false, movies: [] }, action) {
 	switch(action.type) {
 
-	case 'ADD_MOVIES':
-	return state;
+	case 'LOADING_MOVIES':
+    return Object.assign({}, state, {loading: true})
+
+	case 'FETCH_MOVIES':
+    return { loading: false, movies: action.payload }
 
 	default:
 	return state;

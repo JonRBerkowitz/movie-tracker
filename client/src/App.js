@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import logo from './logo.svg';
 import './App.css';
 import SearchContainer from './containers/SearchContainer';
 
@@ -14,9 +13,7 @@ class App extends React.Component {
     return(
       <div>
       <h1>TEST</h1>
-      {this.props.movies.map(movie =>
-        <li>{movie}</li>
-      )}
+
       <SearchContainer />
       </div>
     )
