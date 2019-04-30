@@ -5,14 +5,10 @@ import { connect } from 'react-redux';
 
 class SearchContainer extends React.Component {
 
-	componentDidMount() {
-		this.props.fetchMovies()
-	}
-
 	render(){
 	return(
 		<div>
-			<SearchInput />
+			<SearchInput fetchMovies={this.props.fetchMovies} />
 			{this.props.movies.map( movie =>
 				<li>{movie.original_title}</li>
 			)}
@@ -26,8 +22,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-	return { fetchMovies: () => dispatch( fetchMovies() ) }
+	return { fetchMovies: (query) => dispatch( fetchMovies(query) ) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer)
-
