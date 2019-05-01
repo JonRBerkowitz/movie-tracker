@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchInput from '../components/SearchInput'
+import MovieContainer from './MovieContainer'
 import fetchMovies from '../actions/SearchActions'
 import { connect } from 'react-redux';
 
@@ -9,9 +10,7 @@ class SearchContainer extends React.Component {
 	return(
 		<div>
 			<SearchInput fetchMovies={this.props.fetchMovies} />
-			{this.props.movies.map( movie =>
-				<li>{movie.original_title}</li>
-			)}
+			<MovieContainer movies={this.props.movies} />
 		</div>
 	)
 	}
