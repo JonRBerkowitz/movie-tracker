@@ -5,4 +5,8 @@ class UsersController < ApplicationController
 		render json: @users
 	end
 
+	def show
+		
+	end
+
 end

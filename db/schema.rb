@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 2019_05_01_195510) do
   end
 
   create_table "movies", force: :cascade do |t|
+    t.integer "data_id"
+    t.string "title"
+    t.string "tagline"
+    t.string "overview"
+    t.string "runtime"
+    t.string "poster_path"
+    t.boolean "watched", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

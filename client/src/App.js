@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import SearchContainer from './containers/SearchContainer';
+import ListContainer from './containers/ListContainer'
 
 class App extends React.Component {
 
@@ -11,10 +12,11 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
-      <h1>TEST</h1>
+      <div className="wrapper">
+      <h1>Movie Tracker</h1>
 
       <SearchContainer />
+      <ListContainer />
       </div>
     )
   }

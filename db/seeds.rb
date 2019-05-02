@@ -7,8 +7,28 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 new_user = User.create(username: "Jon", password: "pass")
 new_list = List.create(name: "My List", user_id: 1)
-movie_a = Movie.create(id: 927)
-movie_b = Movie.create(id: 928)
+new_list2 = List.create(name: "My Other List", user_id: 1)
+
+movie_a = Movie.create(
+	data_id: 927, 
+	title: "Gremlins",
+	tagline: "Don't get him wet, keep him out of bright light, and never feed him after midnight.",
+	poster_path: "/5t16qsvUmksew50X0o6D5y0lrJM.jpg",
+	runtime: "106",
+	watched: true,
+	overview: "When Billy Peltzer is given a strange but adorable pet named Gizmo for Christmas, he inadvertently breaks the three important rules of caring for a Mogwai, and unleashes a horde of mischievous gremlins on a small town."
+	)
+movie_b = Movie.create(
+	data_id: 928, 
+	title: "Gremlins 2: The New Batch",
+	tagline: "Here they grow again.",
+	poster_path: "/mkWD9W27JYmQPbgcryPBdI2cF4r.jpg",
+	runtime: "106",
+	overview: "Young sweethearts Billy and Kate move to the Big Apple, land jobs in a high-tech office park and soon reunite with the friendly and lovable Gizmo. But a series of accidents creates a whole new generation of Gremlins. The situation worsens when the devilish green creatures invade a top-secret laboratory and develop genetically altered powers, making them even harder to destroy!"
+	)
 
 new_list.movies << movie_a
 new_list.movies << movie_b
+
+new_list2.movies << movie_a
+new_list2.movies << movie_b
