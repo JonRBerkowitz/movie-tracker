@@ -1,11 +1,11 @@
-function listReducer (state = { loading: false, lists: [] }, action) {
+function listReducer (state = { loading: false, list_data: [], movies: [] }, action) {
 	switch(action.type) {
 
 	case 'LOADING_LIST':
     return Object.assign({}, state, {loading: true})
 
 	case 'FETCH_LIST':
-    return { loading: false, lists: action.payload }
+    return { loading: false, list_data: action.payload, movies: action.movies }
 
 	default:
 	return state;
