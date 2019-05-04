@@ -6,7 +6,7 @@ class ListsController < ApplicationController
 	end
 
 	def show
-		@list = List.find_by(params[:id])
+		@list = List.find(params[:id])
 		render json: @list.to_json(include: :movies)
 	end
 

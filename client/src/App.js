@@ -1,30 +1,22 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import SearchContainer from './containers/SearchContainer';
-import ListContainer from './containers/ListContainer'
+import MainContainer from './containers/MainContainer';
+import LoginContainer from './containers/LoginContainer';
 
 class App extends React.Component {
 
-  state = {
-    text: "",
-  }
-
   render() {
     return(
-      <div className="wrapper">
-      <h1>Movie Tracker</h1>
-
-      <SearchContainer />
-      <ListContainer />
-      </div>
+      <Router>
+      <React.Fragment>
+        <Route exact path="/" component={MainContainer} />
+        <Route exact path="/login" component={LoginContainer} />
+      </React.Fragment>
+      </Router>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  return { movies: state.search.movies }
-}
 
-export default connect (mapStateToProps)(App);
-
+export default App;

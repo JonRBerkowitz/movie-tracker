@@ -11,12 +11,9 @@ class ListContainer extends React.Component {
 	}
 
 	render(){
-		console.log(this.props.list)
-		console.log(this.props.movies)
 	return(
 		<div>
 			<hr />
-			<h4>List Picker</h4>
 			<List movie_data={this.props.movies} list_data={this.props.list} />
 		</div>
 	)
