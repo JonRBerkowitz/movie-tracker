@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchInput from '../components/SearchInput'
-import MovieContainer from './MovieContainer'
-import fetchMovies from '../actions/SearchActions'
+import SearchInput from '../components/SearchInput';
+import MovieContainer from './MovieContainer';
+import fetchMovies from '../actions/SearchActions';
 import { connect } from 'react-redux';
 
 class SearchContainer extends React.Component {
