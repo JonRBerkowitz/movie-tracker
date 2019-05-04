@@ -23,6 +23,23 @@ body {
 	margin: 0 auto;
 }
 
+.add-movie {
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	opacity: 0;
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+	font-size: 3em;
+}
+
+.add-movie:hover {
+	opacity: .7;
+}
+
+
+
 .movie-front {
 	width: 120px;
 	height: 185px;
@@ -30,7 +47,8 @@ body {
 	margin-top: 15px;
 	border: 1px solid #353538;
 	box-shadow: 1px 3px 3px #1c1c1e;
-
+	background-repeat: no-repeat;
+  	background-size: cover;
 }
 
 .search-results {

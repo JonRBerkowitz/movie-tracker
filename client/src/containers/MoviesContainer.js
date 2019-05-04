@@ -4,7 +4,7 @@ import { addMovieToList, removeMovieFromList } from '../actions/MovieActions';
 
 import { connect } from 'react-redux';
 
-class MovieContainer extends React.Component {
+class MoviesContainer extends React.Component {
 
 	render(){
 	return(
@@ -22,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
 	return { addMovie: () => dispatch( addMovieToList() ), removeMovie: () => dispatch( removeMovieFromList() ) }
 }
 
-export default connect(null, mapDispatchToProps)(MovieContainer);
+export default connect(null, mapDispatchToProps)(MoviesContainer);

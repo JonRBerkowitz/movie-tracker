@@ -1,11 +1,11 @@
 import React from 'react';
-import MovieContainer from '../containers/MovieContainer';
+import MoviesContainer from '../containers/MoviesContainer';
 
 
 const List = (props) => 
 	<div>
 	<h1>{props.list_data.name}</h1>
-	<MovieContainer movies={props.movie_data} />
+	<MoviesContainer movies={props.movie_data} />
 	</div>;
 
 

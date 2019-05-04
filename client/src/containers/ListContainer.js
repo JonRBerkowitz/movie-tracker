@@ -1,6 +1,5 @@
 import React from 'react';
 import List from '../components/List';
-import MovieContainer from './MovieContainer'
 import { fetchList } from '../actions/ListActions'
 import { connect } from 'react-redux';
 
