@@ -9,7 +9,10 @@ function listReducer (state = { loading: false, list_data: [], movies: [] }, act
 
     case 'ADD_MOVIE':
     console.log("MOVIE ADDED")
-    return state;
+    return Object.assign({}, state, {loading: true});
+
+    case 'UPDATE_LIST':
+    return { loading: false, list_data: state.list_data, movies: [...state.movies, action.payload] }
 
     case 'REMOVE_MOVIE':
     console.log("MOVIE REMOVED")
