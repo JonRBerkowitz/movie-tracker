@@ -28,11 +28,8 @@ class MainContainer extends React.Component {
 
 }
 
-const mapStateToProps = (state) => {
-}
-
 const mapDispatchToProps = dispatch => {
 	return { fetchWatchedList: () => dispatch( fetchWatchedList() ) }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainContainer)
+export default connect(null, mapDispatchToProps)(MainContainer)

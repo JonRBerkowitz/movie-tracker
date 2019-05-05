@@ -19,7 +19,7 @@ class MoviesContainer extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-	return { addMovie: () => dispatch( addMovieToList() ), removeMovie: () => dispatch( removeMovieFromList() ) }
+	return { addMovie: (movie) => dispatch( addMovieToList(movie) ), removeMovie: () => dispatch( removeMovieFromList() ) }
 }
 
 export default connect(null, mapDispatchToProps)(MoviesContainer);
