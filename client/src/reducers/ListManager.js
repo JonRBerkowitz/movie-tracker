@@ -12,7 +12,13 @@ function listReducer (state = { loading: false, list_data: [], movies: [] }, act
     return Object.assign({}, state, {loading: true});
 
     case 'UPDATE_LIST':
-    return { loading: false, list_data: state.list_data, movies: [...state.movies, action.payload] }
+    let index = state.movies.findIndex(movie => movie.data_id == action.payload.data_id);
+
+    if (index == -1) {
+        return { loading: false, list_data: state.list_data, movies: [...state.movies, action.payload] }
+    } else {
+        return state;
+    }
 
     case 'REMOVE_MOVIE':
     console.log("MOVIE REMOVED")
