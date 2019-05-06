@@ -1,14 +1,24 @@
 class MoviesController < ApplicationController
 
 	def create
-		@user = User.first
-		@list = List.last
 		response.set_header('Access-Control-Allow-Origin', '*')
 
-		movie = Movie
-		movie = Movie.create(movie_params)
-		@list.movies << movie
-    	render json: movie, status: 201
+		@user = User.first
+		@list = List.last
+
+		@movie = Movie.new(movie_params)
+
+		user_movies = @user.movies.where(data_id: @movie.data_id)[0]
+
+		if user_movies == nil
+			@movie.save
+			@list.movies << @movie
+			status = 201
+		else
+			status = 500
+    	end
+
+    	render json: @movie, status: status
 	end
 
 

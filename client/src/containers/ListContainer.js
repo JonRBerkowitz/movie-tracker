@@ -1,9 +1,14 @@
 import React from 'react';
 import List from '../components/List';
 import { fetchList } from '../actions/ListActions'
+import { removeMovieFromList } from '../actions/MovieActions';
 import { connect } from 'react-redux';
 
 class ListContainer extends React.Component {
+
+	state = {
+		type: "-"
+	}
 
 	componentDidMount() {
 		this.props.fetchList()
@@ -13,7 +18,7 @@ class ListContainer extends React.Component {
 	return(
 		<div>
 			<hr />
-			<List movie_data={this.props.movies} list_data={this.props.list} />
+			<List movie_data={this.props.movies} list_data={this.props.list} mutateMovie={this.props.removeMovie} movie_type={this.state.type} />
 		</div>
 	)
 	}
@@ -24,7 +29,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => {
-	return { fetchList: () => dispatch( fetchList() ) }
+	return { fetchList: () => dispatch( fetchList()), removeMovie: (movie) => dispatch( removeMovieFromList(movie)) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListContainer)
