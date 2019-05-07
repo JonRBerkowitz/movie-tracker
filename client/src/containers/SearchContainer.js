@@ -15,18 +15,18 @@ class SearchContainer extends React.Component {
 	return(
 		<div>
 			<SearchInput fetchMovies={this.props.fetchMovies} />
-			<MoviesContainer movies={this.props.movies} mutateMovie={this.props.addMovie} movie_type={this.state.type} />
+			<MoviesContainer movies={this.props.movies} mutateMovie={this.props.addMovie} movie_type={this.state.type} current_list={this.props.list} />
 		</div>
 	)
 	}
 }
 
 const mapStateToProps = state => {
-	return { movies: state.search.movies }
+	return { movies: state.search.movies, list: state.lists.current_list.id }
 }
 
 const mapDispatchToProps = dispatch => {
-	return { fetchMovies: (query) => dispatch( fetchMovies(query) ), addMovie: (movie) => dispatch( addMovieToList(movie)) }
+	return { fetchMovies: (query) => dispatch( fetchMovies(query) ), addMovie: (movie, list) => dispatch( addMovieToList(movie, list)) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer)

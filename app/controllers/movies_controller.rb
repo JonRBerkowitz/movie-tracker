@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
 		response.set_header('Access-Control-Allow-Origin', '*')
 
 		@user = User.first
-		@list = List.last
+		@list = List.find(params[:list_id])
 
 		@movie = Movie.new(movie_params)
 
