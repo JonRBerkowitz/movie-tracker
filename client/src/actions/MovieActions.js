@@ -1,5 +1,4 @@
 export function addMovieToList(movie) {
-	console.log(movie.title)
 	return (dispatch) => { 
 		dispatch({ type: 'ADD_MOVIE' });
 		return fetch('/movies', {

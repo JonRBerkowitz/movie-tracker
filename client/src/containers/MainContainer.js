@@ -2,17 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SearchContainer from './SearchContainer';
 import ListContainer from './ListContainer';
-import { fetchWatchedList } from '../actions/ListActions';
 
 class MainContainer extends React.Component {
 
 	state = {
 		watched_movies: [],
 		watched_movies_ids: []
-	}
-
-	componentDidMount() {
-		this.props.fetchWatchedList()
 	}
 
 	render() {
@@ -28,8 +23,5 @@ class MainContainer extends React.Component {
 
 }
 
-const mapDispatchToProps = dispatch => {
-	return { fetchWatchedList: () => dispatch( fetchWatchedList() ) }
-}
 
-export default connect(null, mapDispatchToProps)(MainContainer)
+export default MainContainer

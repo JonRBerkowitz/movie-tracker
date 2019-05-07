@@ -1,7 +1,8 @@
 class ListsController < ApplicationController
 
 	def index
-		@lists = List.all
+		@user = User.first
+		@lists = @user.lists
 		render json: @lists.to_json(include: :movies)
 	end
 
