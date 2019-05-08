@@ -8,8 +8,9 @@ class MoviesContainer extends React.Component {
 	return(
 		<div className="search-results">
 		{this.props.movies.map(movie_info => 
-			<Movie movie_info={movie_info} onClick={this.props.mutateMovie} movie_type={this.props.movie_type} current_list={this.props.current_list} movie_id={movie_info.data_id || movie_info.id} />
+			<Movie movie_info={movie_info} onClick={this.props.mutateMovie} movie_type={this.props.movie_type} list={this.props.list} movie_id={movie_info.data_id || movie_info.id} />
 		)}
+
 		</div>
 	)
 	}

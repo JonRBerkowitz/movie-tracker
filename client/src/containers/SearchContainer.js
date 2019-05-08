@@ -11,7 +11,7 @@ class SearchContainer extends React.Component {
 	return(
 		<div>
 			<SearchInput fetchMovies={this.props.fetchMovies} />
-			<MoviesContainer movies={this.props.movies} mutateMovie={this.props.addMovie} movie_type={"+"} current_list={this.props.list} />
+			<MoviesContainer movies={this.props.movies} mutateMovie={this.props.addMovie} movie_type={"+"} list={this.props.list} />
 		</div>
 	)
 	}
