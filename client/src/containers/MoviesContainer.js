@@ -1,8 +1,6 @@
 import React from 'react';
 import Movie from '../components/Movie';
 
-import { connect } from 'react-redux';
-
 class MoviesContainer extends React.Component {
 
 	render(){
@@ -19,4 +17,4 @@ class MoviesContainer extends React.Component {
 }
 
 
-export default MoviesContainer;
+export default MoviesContainer

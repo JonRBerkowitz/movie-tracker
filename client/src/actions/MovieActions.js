@@ -20,3 +20,11 @@ export function removeMovieFromList(movie, list) {
 	  .then(movie => dispatch({ type: 'UPDATE_LIST', payload: [] }))
 	};
 }
+
+export function fetchMovie(movie) {
+	return (dispatch) => { dispatch({ type: 'LOADING_MOVIE' });
+		return fetch(`https://api.themoviedb.org/3/movie/${movie}?api_key=a0290c76300b1f2e88f668e76490cd72`)
+		.then(response => response.json())
+		.then(movie => dispatch({ type: 'FETCH_MOVIE', payload: movie }));
+	};
+}

@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import searchReducer from './searchManager';
 import listReducer from './ListManager';
-import watchedListReducer from './WatchedListManager'
+import movieReducer from './MovieManager'
 
 const rootReducer = combineReducers({
 	search: searchReducer,
 	lists: listReducer,
-	watchedList : watchedListReducer
+	movie: movieReducer
 })
 
 export default rootReducer
