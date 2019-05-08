@@ -6,7 +6,7 @@ const List = (props) =>
 
 	<div>
 	<h3>{props.list.name}</h3>
-	<MoviesContainer movies={props.list.movies} movie_type={"-"}/>
+	<MoviesContainer movies={props.list.movies} movie_type={"-"} mutateMovie={props.mutateMovie} current_list={props.list} />
 	</div>;
 
 

@@ -7,15 +7,11 @@ import { connect } from 'react-redux';
 
 class SearchContainer extends React.Component {
 
-	state = {
-		type: "+"
-	}
-
 	render(){
 	return(
 		<div>
 			<SearchInput fetchMovies={this.props.fetchMovies} />
-			<MoviesContainer movies={this.props.movies} mutateMovie={this.props.addMovie} movie_type={this.state.type} current_list={this.props.list} />
+			<MoviesContainer movies={this.props.movies} mutateMovie={this.props.addMovie} movie_type={"+"} current_list={this.props.list} />
 		</div>
 	)
 	}

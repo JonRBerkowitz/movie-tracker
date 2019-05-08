@@ -10,6 +10,13 @@ export function addMovieToList(movie, list) {
 	};
 }
 
-export function removeMovieFromList() {
-	return (dispatch) => { dispatch({ type: 'REMOVE_MOVIE' }); }
+export function removeMovieFromList(movie, list) {
+	return (dispatch) => { dispatch({ type: 'REMOVE_MOVIE' }); 
+	return fetch(`/lists/${list}`, {
+		method: "PUT",
+		body: JSON.stringify({ movie_id: movie.id, list_id: list }),
+		headers: { 'Content-Type': 'application/json','Accept': 'application/json' }
+	}).then(response => response.json())
+	  .then(movie => dispatch({ type: 'UPDATE_LIST', payload: [] }))
+	};
 }

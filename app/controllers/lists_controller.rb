@@ -11,4 +11,12 @@ class ListsController < ApplicationController
 		render json: @list.to_json(include: :movies)
 	end
 
+	def update
+		@list = List.find(params[:list_id]).movies
+		@movie = Movie.find(params[:movie_id])
+
+		@list.delete(@movie)
+		render json: @list, status: 201
+	end
+
 end

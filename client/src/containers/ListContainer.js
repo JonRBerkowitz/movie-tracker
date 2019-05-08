@@ -17,7 +17,7 @@ class ListContainer extends React.Component {
 
 	renderList = () => {
 		if (this.props.lists.length > 0) {
-			return <React.Fragment><ListSelector lists={this.props.lists} /><List list={this.props.current_list} /></React.Fragment>
+			return <React.Fragment><ListSelector lists={this.props.lists} /><List list={this.props.current_list} mutateMovie={this.props.removeMovie} /></React.Fragment>
 		}
 	}
 
@@ -44,7 +44,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => {
-	return { fetchList: () => dispatch( fetchList()), removeMovie: (movie) => dispatch( removeMovieFromList(movie)) }
+	return { fetchList: () => dispatch( fetchList()), removeMovie: (movie, list) => dispatch( removeMovieFromList(movie, list)) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListContainer)
