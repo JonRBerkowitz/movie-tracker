@@ -1,4 +1,5 @@
 import React from 'react';
+import MovieInfo from '../components/MovieInfo'
 import { fetchMovie } from '../actions/MovieActions';
 import { connect } from 'react-redux';
 
@@ -11,8 +12,7 @@ class MoviePage extends React.Component {
 	render(){
 	return(
 		<div className='wrapper'>
-			<h1>{this.props.movie.title}</h1>
-        <h2>{this.props.match.params.movieId}</h2>
+		<MovieInfo movie={this.props.movie}/>
 		</div>
 	)
 	}
