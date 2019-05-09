@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import MainContainer from './containers/MainContainer';
 import LoginContainer from './containers/LoginContainer';
-import MoviePage from './containers/MoviePage'
+import ProtectedRoutes from './components/ProtectedRoutes';
 
 class App extends React.Component {
 
@@ -11,9 +10,10 @@ class App extends React.Component {
     return(
       <Router>
       <React.Fragment>
-        <Route exact path="/" component={MainContainer} />
+      <Switch>
         <Route exact path="/login" component={LoginContainer} />
-        <Route path={`/movies/:movieId`} component={MoviePage} />
+        <Route path="/" component={ProtectedRoutes} />
+      </Switch>
       </React.Fragment>
       </Router>
     )
