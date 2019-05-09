@@ -17,7 +17,7 @@ export function removeMovieFromList(movie, list) {
 		body: JSON.stringify({ movie_id: movie.id, list_id: list }),
 		headers: { 'Content-Type': 'application/json','Accept': 'application/json' }
 	}).then(response => response.json())
-	  .then(movie => dispatch({ type: 'UPDATE_LIST', payload: [] }))
+	  .then(movie => dispatch({ type: 'REMOVE_MOVIE_FROM_LIST', payload: movie }))
 	};
 }
 

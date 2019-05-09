@@ -16,7 +16,7 @@ class ListsController < ApplicationController
 		@movie = Movie.find(params[:movie_id])
 
 		@list.delete(@movie)
-		render json: @list, status: 201
+		render json: @movie, status: 201
 	end
 
 end

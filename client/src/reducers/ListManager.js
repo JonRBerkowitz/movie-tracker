@@ -18,7 +18,12 @@ function listReducer (state = { loading: false, lists: [], current_list: [] }, a
     return Object.assign({}, state, {loading: true});
 
     case 'UPDATE_LIST':
-        return state;
+    console.log(action.payload)
+    return { ...state, current_list: {...state.current_list, movies: state.current_list.movies.concat(action.payload) } }
+    return state;
+
+    case 'REMOVE_MOVIE_FROM_LIST':
+    return { ...state, current_list: {...state.current_list, movies: state.current_list.movies.filter(movie => movie.data_id !== action.payload.data_id)} }
 
     case 'REMOVE_MOVIE':
     console.log("MOVIE REMOVED")

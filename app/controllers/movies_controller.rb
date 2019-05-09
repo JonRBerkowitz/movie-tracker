@@ -9,16 +9,16 @@ class MoviesController < ApplicationController
 		@movie = Movie.new(movie_params)
 
 		user_movies = @user.movies.where(data_id: @movie.data_id)[0]
+		@list_movies = @list.movies.where(data_id: @movie.data_id)[0]
 
 		if user_movies == nil
 			@movie.save
 			@list.movies << @movie
-			status = 201
-		else
-			status = 500
-    	end
-
-    	render json: @movie, status: status
+			render json: @movie, status: 201
+		elsif @list_movies == nil
+			@list.movies << user_movies
+			render json: user_movies, status: 201
+		end
 	end
 
 

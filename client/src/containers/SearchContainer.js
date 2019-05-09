@@ -18,7 +18,7 @@ class SearchContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-	return { movies: state.search.movies, list: state.lists.current_list.id }
+	return { movies: state.search.movies, list: state.lists.current_list }
 }
 
 const mapDispatchToProps = dispatch => {
