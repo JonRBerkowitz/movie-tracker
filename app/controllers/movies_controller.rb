@@ -1,4 +1,10 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_user
+
+  def index
+  	@movies = Movie.all
+  	render json: @movies, status: 200
+  end
 
 	def create
 		response.set_header('Access-Control-Allow-Origin', '*')

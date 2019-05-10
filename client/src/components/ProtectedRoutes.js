@@ -7,7 +7,7 @@ import MoviePage from '../containers/MoviePage';
 class ProtectedRoutes extends React.Component{
   render(){
 
-  if(1 !== 2)
+  if(1 !== 1)
   return <Redirect to="/login" />
 
    return(

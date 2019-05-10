@@ -17,7 +17,8 @@ gem 'foreman', '~> 0.82.0'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-
+gem 'knock'
+gem 'jwt'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

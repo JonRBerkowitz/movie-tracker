@@ -1,2 +1,0 @@
-class MovieListsController < ApplicationController
-end
