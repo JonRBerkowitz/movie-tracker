@@ -18,6 +18,12 @@ body {
 	color: #fff;
 }
 
+hr {
+	margin-bottom: 25px;
+	padding-top: 0;
+	margin-top: 0;
+}
+
 .wrapper {
 	width: 88%;
 	margin: 0 auto;
@@ -48,6 +54,15 @@ body {
 	box-shadow: 1px 2px 2px #151516;
 	background-repeat: no-repeat;
   	background-size: cover;
+}
+
+.app-name {
+	position: fixed;
+	top: 0px;
+	left: 0;
+	font-size: 1.2em;
+	text-align: center;
+	width: 100%;
 }
 
 .movie-page {
@@ -110,8 +125,74 @@ body {
 	color: #dee1e5;
 	width: 100%;
 	text-decoration: none;
+	height: 500%;
 }
 
 .movie-link:hover {
 	text-decoration: underline;
+}
+
+.search-input {
+	width: 100%;
+	height: 60px;
+	font-size: 1.2em;
+	background-color: #38383a;
+	position: fixed;
+	left: 0;
+	top: 50px;
+	text-align: center;
+	border: none;
+}
+
+.search-input:focus {
+	outline: none;
+}
+
+.submit-search {
+	visibility: hidden;
+}
+
+.logout {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #38383a;
+	padding: 10px 20px;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 20px;
+	text-transform: capitalize;
+	z-index: 1;
+}
+
+.logout:hover {
+	background-color: #4286f4;
+}
+
+.search-container {
+	margin-top: 100px;
+}
+
+.list-container {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #161616;
+	width: 100%;
+	border-top: 1px solid #353538;
+	padding: 1.5% 6%;
+}
+
+.list-select {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #a8a8ad;
+	background-color: #161616;
+	border: none;
+	border-bottom: 1px solid #353538;
+	margin-bottom: 5px;
+}
+
+.list-select:focus {
+	outline: none;
 }

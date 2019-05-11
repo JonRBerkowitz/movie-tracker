@@ -7,6 +7,9 @@ export function login(email, password) {
 			body: JSON.stringify({ 'auth': {'email': email, 'password': password } }),
 			headers: { 'Content-Type': 'application/json','Accept': 'application/json' }
 		}).then(response => response.json())
-		  .then(result => localStorage.setItem('jwt', result.jwt))
+		  .then(result => {
+		  	localStorage.setItem('jwt', result.jwt)
+		  	window.history.pushState({}, "", 'http://localhost:3000/')
+		})
 	};
 }

@@ -19,7 +19,7 @@ handleChange = (event) => {
 
 render(){
 return(
-	<select onChange={event => this.handleChange(event)}>
+	<select className="list-select" onChange={event => this.handleChange(event)}>
 		{this.props.lists.map((list, index) => 
 		<option value={index}>{list.name}</option>
 		)}

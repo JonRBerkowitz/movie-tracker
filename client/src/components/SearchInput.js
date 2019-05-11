@@ -22,8 +22,8 @@ class SearchInput extends React.Component {
 	return(
 		<div>
 			<form onSubmit={ (event) => this.handleSubmit(event) } >
-				<input type="text" onChange={this.handleChange} value={this.state.query} />
-				<input type="submit" />
+				<input className="search-input" type="text" onChange={this.handleChange} value={this.state.query} placeholder="Search for a movie..."/>
+				<input className="submit-search" type="submit" />
 			</form>
 		</div>
 	)

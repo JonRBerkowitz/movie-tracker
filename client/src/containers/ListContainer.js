@@ -31,8 +31,7 @@ class ListContainer extends React.Component {
 
 	render(){
 	return(
-		<div>
-			<hr />
+		<div className="list-container">
 			{this.renderList()}
 		</div>
 	)

@@ -9,7 +9,7 @@ class SearchContainer extends React.Component {
 
 	render(){
 	return(
-		<div>
+		<div className="search-container">
 			<SearchInput fetchMovies={this.props.fetchMovies} />
 			<MoviesContainer movies={this.props.movies} mutateMovie={this.props.addMovie} movie_type={"+"} list={this.props.list} />
 		</div>

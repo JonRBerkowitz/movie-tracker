@@ -7,7 +7,7 @@ import MoviePage from '../containers/MoviePage';
 class ProtectedRoutes extends React.Component{
   render(){
 
-  if(1 !== 1)
+  if(localStorage.getItem('jwt') === null)
   return <Redirect to="/login" />
 
    return(

@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_action :authenticate_user
 
 	def index
-		@user = User.first
+		@user = current_user
 		@lists = @user.lists
 		render json: @lists.to_json(include: :movies)
 	end

@@ -2,6 +2,8 @@ import React from 'react';
 import MovieInfo from '../components/MovieInfo'
 import { fetchMovie } from '../actions/MovieActions';
 import { connect } from 'react-redux';
+import Navigation from '../components/Navigation';
+
 
 class MoviePage extends React.Component {
 
@@ -11,9 +13,12 @@ class MoviePage extends React.Component {
 
 	render(){
 	return(
+		<React.Fragment>
+		<Navigation />
 		<div className='wrapper'>
 		<MovieInfo movie={this.props.movie}/>
 		</div>
+		</React.Fragment>
 	)
 	}
 
