@@ -6,7 +6,7 @@ class MoviesContainer extends React.Component {
 	render(){
 
 	return(
-		<div className="search-results">
+		<div className={this.props.movieWrap}>
 		{this.props.movies.map(movie_info => 
 			<Movie style={this.props.style} movie_info={movie_info} onClick={this.props.mutateMovie} movie_type={this.props.movie_type} list={this.props.list} movie_id={movie_info.data_id || movie_info.id} />
 		)}

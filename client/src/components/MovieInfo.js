@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MovieInfo = (props) =>
 <React.Fragment>
-	<div className="movie-cover" style={{backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${props.movie.backdrop_path})` }}><div className="overlay"></div></div>
+	<div className="movie-cover" style={{backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${props.movie.backdrop_path})` }}><div className="overlay"><Link to="/" className="back-button">&lt;</Link></div></div>
 <div className="movie-page">
 
 	<div className="image-container">
