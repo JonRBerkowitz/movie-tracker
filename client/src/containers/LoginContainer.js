@@ -4,6 +4,7 @@ import LoginForm from '../components/LoginForm';
 class LoginContainer extends React.Component {
 
 	render(){
+
 	return(
 		<div className='wrapper'>
 			<LoginForm />

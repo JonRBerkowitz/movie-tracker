@@ -5,7 +5,7 @@ import MoviesContainer from '../containers/MoviesContainer';
 const List = (props) => 
 
 	<div className="list">
-	<MoviesContainer movies={props.list.movies} movie_type={"-"} mutateMovie={props.mutateMovie} list={props.list} />
+	<MoviesContainer style={props.style} movies={props.list.movies} movie_type={"-"} mutateMovie={props.mutateMovie} list={props.list} />
 	</div>;
 
 

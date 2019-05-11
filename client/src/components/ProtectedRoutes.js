@@ -12,8 +12,11 @@ class ProtectedRoutes extends React.Component{
 
    return(
      <React.Fragment>
+     <Switch>
         <Route exact path="/" component={MainContainer} />
         <Route path={`/movies/:movieId`} component={MoviePage} />
+        <Route component={MainContainer} />
+      </Switch>
      </React.Fragment>
    );
   }

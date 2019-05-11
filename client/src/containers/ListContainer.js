@@ -17,7 +17,7 @@ class ListContainer extends React.Component {
 
 	renderList = () => {
 		if (this.props.lists.length > 0) {
-			return <React.Fragment><ListSelector lists={this.props.lists} /><List list={this.props.current_list} mutateMovie={this.props.removeMovie} /></React.Fragment>
+			return <React.Fragment><ListSelector lists={this.props.lists} /><List list={this.props.current_list} mutateMovie={this.props.removeMovie} style={"remove-movie"}/></React.Fragment>
 		}
 	}
 

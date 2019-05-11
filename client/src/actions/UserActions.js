@@ -9,7 +9,6 @@ export function login(email, password) {
 		}).then(response => response.json())
 		  .then(result => {
 		  	localStorage.setItem('jwt', result.jwt)
-		  	window.history.pushState({}, "", 'http://localhost:3000/')
 		})
 	};
 }

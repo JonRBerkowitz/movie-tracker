@@ -1,13 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/UserActions';
+import { Redirect } from 'react-router-dom';
 
 class LoginForm extends React.Component {
 
 	state = {
 		email: "",
-		password: ""
+		password: "",
+		logged_in: false
 	}
+
 
 	handleChange = (event) => {
 		this.setState({ [event.target.name]: event.target.value })
@@ -16,10 +19,18 @@ class LoginForm extends React.Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		this.props.login(this.state.email, this.state.password)
-		this.setState({ email: "", password: ""})
+		.then( () => this.setState({ email: "", password: "", logged_in: true }))
 	}
 
 	render() {
+
+	if (this.state.logged_in === true) {
+		return <Redirect to="/" />
+	}
+
+	if(localStorage.getItem('jwt') !== null)
+	return <Redirect to="/" />
+
 	return(
 		<React.Fragment>
 			<h1>Login</h1>

@@ -1,7 +1,10 @@
 import React from 'react';
 
 const MovieInfo = (props) =>
+<React.Fragment>
+	<div className="movie-cover" style={{backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${props.movie.backdrop_path})` }}><div className="overlay"></div></div>
 <div className="movie-page">
+
 	<div className="image-container">
 		<img className="movie-poster" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${props.movie.poster_path}`} />
 	</div>
@@ -12,6 +15,7 @@ const MovieInfo = (props) =>
 		<p className="overview">{props.movie.overview}</p>
 		<p className="rating">Rating: {props.movie.vote_average}/10</p>
 	</div>
-</div>;
+</div>
+</React.Fragment>;
 
 export default MovieInfo

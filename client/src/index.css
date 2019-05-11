@@ -16,13 +16,9 @@ code {
 body {
 	background-color: #1b1b1c;
 	color: #fff;
+	orphans: 3;
 }
 
-hr {
-	margin-bottom: 25px;
-	padding-top: 0;
-	margin-top: 0;
-}
 
 .wrapper {
 	width: 88%;
@@ -35,13 +31,30 @@ hr {
 	cursor: pointer;
 	opacity: 0;
 	background-color: #000;
-	color: #fff;
+	color: #26f71b;
 	font-weight: bold;
-	font-size: 3em;
+	font-size: 4em;
 }
 
 .add-movie:hover {
-	opacity: .7;
+	opacity: .6;
+	border: 1px solid #26f71b;
+}
+
+.remove-movie {
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	opacity: 0;
+	background-color: #000;
+	color: #ff0873;
+	font-weight: bold;
+	font-size: 5em;
+}
+
+.remove-movie:hover {
+	opacity: .6;
+	border: 1px solid #ff0873;
 }
 
 .movie-front {
@@ -63,6 +76,11 @@ hr {
 	font-size: 1.2em;
 	text-align: center;
 	width: 100%;
+	background-color: #1b1b1c;
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 14px;
+	z-index: 1;
 }
 
 .movie-page {
@@ -76,7 +94,9 @@ hr {
 
 .movie-page h1 {
 	margin-top: -5px;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
+	font-size: 3.5em;
+	line-height: 1em;
 }
 
 .movie-page h2 {
@@ -85,7 +105,7 @@ hr {
 }
 
 .movie-page h3 {
-	font-size: .9em;
+	font-size: 1.1em;
 	font-style: italic;
 	font-weight: normal;
 	margin-top: 0;
@@ -98,6 +118,7 @@ hr {
 
 .rating {
 	font-style: italic;
+	font-weight: bold;
 	font-size: 1.3em;
 }
 
@@ -110,6 +131,7 @@ hr {
 
 .movie-info {
 	margin-left: 30px;
+	margin-top: 80px;
 }
 
 .search-results {
@@ -142,6 +164,7 @@ hr {
 	top: 50px;
 	text-align: center;
 	border: none;
+	z-index: 1;
 }
 
 .search-input:focus {
@@ -171,6 +194,7 @@ hr {
 
 .search-container {
 	margin-top: 100px;
+	margin-bottom: 330px;
 }
 
 .list-container {
@@ -181,6 +205,7 @@ hr {
 	width: 100%;
 	border-top: 1px solid #353538;
 	padding: 1.5% 6%;
+	height: 250px;
 }
 
 .list-select {
@@ -195,4 +220,22 @@ hr {
 
 .list-select:focus {
 	outline: none;
+}
+
+.movie-cover {
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.overlay {
+	background-color: rgba(0,0,0,.84);
+	height: 100%;
+	width:100%;
 }
