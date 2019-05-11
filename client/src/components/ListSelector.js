@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 class ListSelector extends React.Component {
 
 state = {
-	current_list: [this.props.lists[0]]
+	current_list: [this.props.current_list || this.props.lists[0]]
 }
 
 componentDidMount() {
-	this.props.switchList(this.props.lists[0])
+	this.props.switchList(this.props.current_list || this.props.lists[0])
 }
 
 handleChange = (event) => {
@@ -28,6 +28,9 @@ return(
 	}
 }
 
+const mapStateToProps = state => {
+	return { current_list: state.lists.current_list }
+}
 
 const mapDispatchToProps = dispatch => {
 	return { switchList: (list) => dispatch( switchList(list)) }

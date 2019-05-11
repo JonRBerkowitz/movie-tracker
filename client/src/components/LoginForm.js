@@ -33,12 +33,16 @@ class LoginForm extends React.Component {
 
 	return(
 		<React.Fragment>
-			<h1>Login</h1>
+			<h1 className="login-page-title">MovieTracker</h1>
+			<div className="login-box">
 			<form onSubmit={(event) => this.handleSubmit(event)} >
-				<input type="text" name="email" onChange={(event) => this.handleChange(event)} value={this.state.username} /><br />
-				<input type="password" name="password" onChange={(event) => this.handleChange(event)} value={this.state.password} /><br />
-				<input type="submit" />
+				<p className="field-name">Email:</p>
+				<input className="login-field" type="text" name="email" onChange={(event) => this.handleChange(event)} value={this.state.username} /><br />
+				<p className="field-name">Password:</p>
+				<input className="login-field" type="password" name="password" onChange={(event) => this.handleChange(event)} value={this.state.password} /><br />
+				<input className="submitForm" type="submit" />
 			</form>
+			</div>
 		</React.Fragment>
 	)
 	}

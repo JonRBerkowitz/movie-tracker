@@ -17,7 +17,7 @@ class MainContainer extends React.Component {
 	<React.Fragment>
 	<Navigation />
 	  <div className="wrapper">
-    	<h1 className="app-name">MOVIE TRACKER</h1>
+    	<h1 className="app-name">MovieTracker</h1>
 
     	<SearchContainer />
       	<ListContainer />
