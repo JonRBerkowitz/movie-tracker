@@ -3,7 +3,8 @@ import React from 'react';
 class SearchInput extends React.Component {
 
 	state = {
-		query: ""
+		query: "",
+		placeholder: "Search for a movie..."
 	}
 
 	handleChange = (event) => {
@@ -15,6 +16,7 @@ class SearchInput extends React.Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		this.props.fetchMovies(this.state.query)
+		this.setState({ placeholder: this.state.query })
 		this.setState({ query: "" })
 	}
 
@@ -22,7 +24,7 @@ class SearchInput extends React.Component {
 	return(
 		<div>
 			<form onSubmit={ (event) => this.handleSubmit(event) } >
-				<input className="search-input" type="text" onChange={this.handleChange} value={this.state.query} placeholder="Search for a movie..."/>
+				<input className="search-input" type="text" onChange={this.handleChange} value={this.state.query} placeholder={this.state.placeholder} />
 				<input className="submit-search" type="submit" />
 			</form>
 		</div>

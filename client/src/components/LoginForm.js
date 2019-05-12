@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
 				<input className="login-field" type="text" name="email" onChange={(event) => this.handleChange(event)} value={this.state.username} /><br />
 				<p className="field-name">Password:</p>
 				<input className="login-field" type="password" name="password" onChange={(event) => this.handleChange(event)} value={this.state.password} /><br />
-				<input className="submitForm" type="submit" />
+				<input className="submitForm" type="submit" value="Log In"/>
 			</form>
 			</div>
 		</React.Fragment>

@@ -7,7 +7,7 @@ const MovieInfo = (props) =>
 <div className="movie-page">
 
 	<div className="image-container">
-		<img className="movie-poster" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${props.movie.poster_path}`} />
+		<img className="movie-poster" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${props.movie.poster_path}`} alt={props.movie.title}/>
 	</div>
 	<div className="movie-info">
 		<h1>{props.movie.title}</h1>

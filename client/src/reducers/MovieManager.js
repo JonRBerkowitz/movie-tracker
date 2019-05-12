@@ -7,6 +7,9 @@ function movieReducer (state = { loading: false, movie: [] }, action) {
 	case 'FETCH_MOVIE':
     return { loading: false, movie: action.payload }
 
+    case 'CLEAR':
+    return { loading: false, movie: []}
+
 	default:
 	return state;
 	}

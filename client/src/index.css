@@ -19,6 +19,10 @@ body {
 	orphans: 3;
 }
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 
 .wrapper {
 	width: 88%;
@@ -67,6 +71,12 @@ body {
 	box-shadow: 1px 2px 2px #151516;
 	background-repeat: no-repeat;
   	background-size: cover;
+
+}
+
+.movie-front:active {
+	margin-top: 18px;
+	margin-bottom: 17px;
 }
 
 .app-name {
@@ -105,6 +115,7 @@ body {
 	width: 98.5%;
 	height: 30px;
 	border-radius: 3px;
+	text-indent: 8px;
 }
 
 .submitForm {
@@ -114,6 +125,22 @@ body {
 	padding: 10px;
 	border-radius: 3px;
 	cursor: pointer;
+	background-color: #4286f4;
+	border: none;
+	border-radius: 30px;
+	color: #fff;
+	box-shadow: 0 2px 5px #000;
+	outline: none;
+}
+
+.submitForm:hover {
+	background-color: #3a76d8;
+	box-shadow: none;
+}
+
+.submitForm:active {
+	margin-top: 27px;
+	outline: none;
 }
 
 .movie-page {
@@ -123,6 +150,11 @@ body {
 	margin-left: 20%;
 	margin-right: 20%;
 	color: #d2d5db;
+    -webkit-animation: fadein 1s;
+    -moz-animation: fadein 1s; 
+    -ms-animation: fadein 1s;
+    -o-animation: fadein 1s; 
+    animation: fadein 1s;
 }
 
 .movie-page h1 {
@@ -218,9 +250,14 @@ body {
 	top: 50px;
 	text-align: center;
 	border: none;
-	color: #dee1e5;
 	z-index: 1;
+	color: #dee1e5;
 }
+
+::-webkit-input-placeholder {
+	color: transparent;
+  	text-shadow: 0 0 0 #dee1e5;
+  }
 
 .search-input:focus {
 	outline: none;

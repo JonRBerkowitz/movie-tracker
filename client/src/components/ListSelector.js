@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class ListSelector extends React.Component {
 
 state = {
-	current_list: [this.props.current_list || this.props.lists[0]]
+	current_list: [this.props.current_list]
 }
 
 componentDidMount() {
@@ -21,7 +21,7 @@ render(){
 return(
 	<select className="list-select" onChange={event => this.handleChange(event)}>
 		{this.props.lists.map((list, index) => 
-		<option value={index}>{list.name}</option>
+		<option value={index} key={list.id}>{list.name}</option>
 		)}
 	</select>
 	)
@@ -37,4 +37,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, mapDispatchToProps)(ListSelector)
+export default connect(mapStateToProps, mapDispatchToProps)(ListSelector)

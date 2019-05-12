@@ -16,7 +16,7 @@ class MoviePage extends React.Component {
 		<React.Fragment>
 		<Navigation />
 		<div className='wrapper'>
-		<MovieInfo movie={this.props.movie}/>
+		<MovieInfo movie={this.props.movie} />
 		</div>
 		</React.Fragment>
 	)

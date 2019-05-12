@@ -1,6 +1,5 @@
 export function fetchList() {
 	let token = "Bearer " + localStorage.getItem("jwt")
-    console.log(token)
 		return (dispatch) => {
 			dispatch({ type: 'LOADING_LIST' });
 			return fetch('/lists', {

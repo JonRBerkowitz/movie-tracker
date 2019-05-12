@@ -1,6 +1,6 @@
 import React from 'react';
 import AddMovie from './AddMovie';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Movie = (props) =>
 	<div className="movie-shell">
