@@ -82,15 +82,15 @@ body {
 .app-name {
 	position: fixed;
 	top: 0px;
-	left: 0;
+	left: 20px;
 	font-size: 1.2em;
-	text-align: center;
+	text-align: left;
 	width: 100%;
 	background-color: #1b1b1c;
 	margin: 0;
 	padding-top: 10px;
 	padding-bottom: 14px;
-	z-index: 1;
+	z-index: -1;
 }
 
 .login-page-title {
@@ -268,20 +268,52 @@ body {
 }
 
 .logout {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	background-color: #38383a;
-	padding: 10px 20px;
+	font-size: .75em;
+	padding: 5px 10px;
 	color: #fff;
 	text-decoration: none;
 	border-radius: 20px;
 	text-transform: capitalize;
 	z-index: 1;
+	margin-top: 12px;
+	margin-right: 15px;
+	margin-left: -15px;
+	text-align: right;
+	float: right;
+	cursor: pointer;
+}
+
+.name {
+	font-size: 1.2em;
+	margin-top: 10px;
+	margin-left: 15px;
+	vertical-align: center;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.name a {
+		text-decoration: none;
+	color: #fff;
+}
+
+.nav-bar {
+	position: fixed;
+	top: 0px;
+	height: 50px;
+	width: 100%;
+	z-index: 1;
+		background-color: #1b1b1c;
+
 }
 
 .logout:hover {
 	background-color: #4286f4;
+}
+
+.nav-button:hover {
+	background-color: #4286f4;
+	cursor: pointer;
 }
 
 .search-container {
@@ -335,7 +367,7 @@ body {
 
 .back-button {
 	position: fixed;
-	top: 0px;
+	top: 45px;
 	left: 15px;
 	color: #dee1e5;
 	opacity: 0.9;
@@ -349,4 +381,78 @@ body {
 
 .back-button:hover {
 	color: #fff;
+}
+
+.modal {
+	background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    width: 400px;
+    min-height: 160px;
+    margin: 0 auto;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    color: #212123;
+    text-align: center;
+}
+
+.modal-input {
+	text-align: left;
+	width: 100%;
+	background-color: #38383a;
+	height: 50px;
+	color: #dee1e5;
+	border: none;
+	text-indent: 20px;
+	font-size: .9em;
+}
+
+.modal-submit {
+	border-radius: 0 0 5px 5px;
+	box-shadow: none;
+	margin-top: 0;
+}
+
+.modal-submit:active {
+	margin-top: 0;
+}
+
+.modal h1 {
+	display: inline-block;
+	margin-left: 20px
+}
+
+.modal-x {
+	text-align: right;
+	float: right;
+	margin-top: -10px;
+	margin-right: -10px;
+	background-color: #626266;
+	padding: 8px 11px 8px 13px;
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	font-weight: bold;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.modal-x:hover {
+	background-color: #4286f4;
+}
+
+.model input:focus {
+	outline: none;
+}
+
+.backdrop {
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
 }

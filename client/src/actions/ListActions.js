@@ -18,3 +18,15 @@ export function switchList(list) {
 }
 
 
+export function createList(name) {
+	let token = "Bearer " + localStorage.getItem("jwt")
+	return (dispatch) => { 
+		dispatch({ type: 'CREATE_LIST' });
+		return fetch('/lists', {
+			method: "POST",
+			body: JSON.stringify({ name: name , movies: []}),
+			headers: { 'Content-Type': 'application/json','Accept': 'application/json', 'Authorization': token }
+		}).then(response => response.json())
+		  .then(list => dispatch({ type: 'ADD_LIST', payload: list }));
+	};
+}

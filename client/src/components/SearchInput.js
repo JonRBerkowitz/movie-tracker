@@ -16,7 +16,6 @@ class SearchInput extends React.Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		this.props.fetchMovies(this.state.query)
-		this.setState({ placeholder: this.state.query })
 		this.setState({ query: "" })
 	}
 
