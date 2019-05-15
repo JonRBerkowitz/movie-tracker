@@ -32,9 +32,9 @@ function listReducer (state = { loading: false, lists: [], current_list: [] }, a
 
     case 'REMOVE_LIST':
     const index = state.lists.indexOf(state.current_list)
-    const current_list_chooser = (index === 0 ? 1 : 0)
+    const current_list_chooser = (index === 0 ? state.lists[1] : state.lists[0])
     const lists = state.lists.filter(list => list.id !== state.current_list.id)
-    return { loading: false, lists: lists, current_list: state.lists[current_list_chooser] || state.lists[0] }
+    return { loading: false, lists: lists, current_list: current_list_chooser }
 
     default:
 	return state;
