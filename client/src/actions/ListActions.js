@@ -30,3 +30,16 @@ export function createList(name) {
 		  .then(list => dispatch({ type: 'ADD_LIST', payload: list }));
 	};
 }
+
+export function deleteList(list) {
+	let token = "Bearer " + localStorage.getItem("jwt")
+	return (dispatch) => { 
+		dispatch({ type: 'DELETE_LIST' });
+		return fetch(`/lists/${list.id}`, {
+			method: "DELETE",
+			body: JSON.stringify({ list: list }),
+			headers: { 'Content-Type': 'application/json','Accept': 'application/json', 'Authorization': token }
+		}).then(response => response.json())
+		  .then(res => dispatch({ type: 'REMOVE_LIST', payload: res }));
+	};
+}

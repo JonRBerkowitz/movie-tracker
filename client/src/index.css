@@ -283,6 +283,18 @@ body {
 	cursor: pointer;
 }
 
+.delete {
+	color: #898b8e;
+	position: fixed;
+	bottom: 15px;
+	right: 2px;
+}
+
+body .delete:hover {
+	color: #fff;
+	background-color: #f91b35;
+}
+
 .name {
 	font-size: 1.2em;
 	margin-top: 10px;
@@ -293,7 +305,7 @@ body {
 }
 
 .name a {
-		text-decoration: none;
+	text-decoration: none;
 	color: #fff;
 }
 

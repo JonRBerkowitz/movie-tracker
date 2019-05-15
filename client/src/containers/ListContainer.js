@@ -2,7 +2,8 @@ import React from 'react';
 import List from '../components/List';
 import ListSelector from '../components/ListSelector';
 import NewListModal from '../components/modals/NewListModal';
-import { fetchList } from '../actions/ListActions'
+import DeleteListButton from '../components/DeleteListButton';
+import { fetchList } from '../actions/ListActions';
 import { removeMovieFromList } from '../actions/MovieActions';
 import { connect } from 'react-redux';
 
@@ -42,6 +43,8 @@ class ListContainer extends React.Component {
 		<React.Fragment>
 		<div className="list-container">
 			{this.renderList()}
+		<DeleteListButton />
+
 		</div>
       </React.Fragment>
 	)

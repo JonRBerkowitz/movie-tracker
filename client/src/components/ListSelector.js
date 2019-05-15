@@ -5,13 +5,8 @@ import { connect } from 'react-redux';
 class ListSelector extends React.Component {
 
 state = {
-	current_list: [this.props.lists[0]],
-	selected_value: ''
-}
-
-componentDidMount() {
-	this.props.switchList(this.props.current_list)
-	this.setState({ selected_value: this.props.lists.indexOf(this.props.current_list) })
+	current_list: [this.props.current_list],
+	selected_value: "0"
 }
 
 handleChange = (event) => {
@@ -22,11 +17,11 @@ handleChange = (event) => {
 componentDidUpdate(prevProps) {
   if (this.props.lists.length !== prevProps.lists.length) {
 	this.props.switchList(this.props.current_list)
-	this.setState({ selected_value: (this.props.lists.length - 1) })
-}
-	console.log(this.state.selected_value)
-	console.log(this.props.current_list)
-}
+	const ary = this.props.lists.map(list => list.id)
+	const id = this.props.current_list.id
+	console.log(this.props.lists)
+	this.setState({ selected_value: ary.indexOf(id) })
+}}
 
 
 render(){

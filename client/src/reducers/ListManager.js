@@ -27,7 +27,16 @@ function listReducer (state = { loading: false, lists: [], current_list: [] }, a
     console.log(action.payload)
     return { loading: false, lists: state.lists.concat(action.payload), current_list: {...action.payload, movies: []} }
 
-	default:
+	case 'DELETE_LIST':
+    return Object.assign({}, state, {loading: true});
+
+    case 'REMOVE_LIST':
+    const index = state.lists.indexOf(state.current_list)
+    const current_list_chooser = (index === 0 ? 1 : 0)
+    const lists = state.lists.filter(list => list.id !== state.current_list.id)
+    return { loading: false, lists: lists, current_list: state.lists[current_list_chooser] || state.lists[0] }
+
+    default:
 	return state;
 	}
 }
