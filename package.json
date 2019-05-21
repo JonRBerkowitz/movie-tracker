@@ -1,0 +1,28 @@
+{
+  "name": "movie-tracker",
+    "engines": {
+    "node": "6.3.1"
+  },
+  "version": "1.0.0",
+  "description": "This one page application allows a user to query the Movie Database API to find films by title. They can add and remove movies to a watchlist, as well as create and delete new watchlists.Please follow these instructions to get started.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonRBerkowitz/movie-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonRBerkowitz/movie-tracker/issues"
+  },
+  "homepage": "https://github.com/JonRBerkowitz/movie-tracker#readme"
+}
