@@ -15,7 +15,9 @@ class NewListModal extends React.Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+    console.log('A');
 		this.props.createList(this.state.input)
+    console.log('B');
 		this.setState({ input: "" })
     this.props.modalClose()
     this.props.switchList(this.props.lists[(this.props.lists.length - 1)])
