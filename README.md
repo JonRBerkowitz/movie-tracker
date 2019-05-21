@@ -1,24 +1,38 @@
-# README
+# Movie Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This one page application allows a user to query the Movie Database API to find films by title. They can add and remove movies to a watchlist, as well as create and delete new watchlists.Please follow these instructions to get started.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+Clone from the repo, then run
+```
+bundle install
+```
+```
+rake db:migrate
+```
+```
+rake db:seed
+```
+cd into the client directory and run
+```
+npm install
+```
+Then, just run
+```
+rake start
+```
+from the root folder to start your local server.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+This app runs on ruby 2.6.1 and rails 5.2.3
 
-* Database creation
 
-* Database initialization
+## Version
 
-* How to run the test suite
+1.0
 
-* Services (job queues, cache servers, search engines, etc.)
+## Authors
 
-* Deployment instructions
-
-* ...
+* **Jon Berkowitz**
