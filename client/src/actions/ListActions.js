@@ -20,7 +20,6 @@ export function switchList(list) {
 
 export function createList(name) {
 	let token = "Bearer " + localStorage.getItem("jwt")
-	console.log('C');
 	return (dispatch) => { 
 		dispatch({ type: 'CREATE_LIST' });
 		return fetch('/lists', {
@@ -29,10 +28,8 @@ export function createList(name) {
 			headers: { 'Content-Type': 'application/json','Accept': 'application/json', 'Authorization': token }
 		}).then(response => response.json())
 	  .then(list => {
-	  	console.log('D');
 	  	dispatch({ type: 'ADD_LIST', payload: list })});
 	};
-	console.log('E');
 }
 
 export function deleteList(list) {
