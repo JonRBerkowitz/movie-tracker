@@ -1,7 +1,7 @@
 {
   "name": "movie-tracker",
     "engines": {
-    "node": "6.3.1"
+    "node": "8.16.0"
   },
   "version": "1.0.0",
   "description": "This one page application allows a user to query the Movie Database API to find films by title. They can add and remove movies to a watchlist, as well as create and delete new watchlists.Please follow these instructions to get started.",
