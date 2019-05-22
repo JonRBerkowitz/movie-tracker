@@ -9,7 +9,7 @@ class Navigation extends React.Component {
 	}
 
 	renderNewListLink = () => {
-	if(window.location.href.indexOf('movie') < 0) {
+	if(window.location.href.indexOf('movie/') < 0) {
     	return <a className="logout" href="#" onClick={()=> this.props.modalOpen()}>New List</a>
   	} else {
   		return null
