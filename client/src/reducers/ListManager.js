@@ -17,11 +17,16 @@ function listReducer (state = { loading: false, lists: [], current_list: [] }, a
     const i = state.lists.indexOf(state.current_list)
     const movies = (state.current_list.movies.length > 0 ? [...state.current_list.movies, action.payload] : action.payload)
     const current_list = {...state.current_list, movies: [...state.current_list.movies, action.payload] }
-
-    return { ...state, current_list: current_list }
+    const new_lists = state.lists
+    new_lists[i] = current_list
+    return { ...state, lists: new_lists, current_list: current_list }
 
     case 'REMOVE_MOVIE_FROM_LIST':
-    return { ...state, current_list: {...state.current_list, movies: state.current_list.movies.filter(movie => movie.data_id !== action.payload.data_id)} }
+    const j = state.lists.indexOf(state.current_list)
+    const rem_current_list = {...state.current_list, movies: state.current_list.movies.filter(movie => movie.data_id !== action.payload.data_id)}
+    const rem_new_lists = state.lists
+    rem_new_lists[j] = rem_current_list
+    return { ...state, lists: rem_new_lists, current_list: rem_current_list }
 
     case 'CREATE_LIST':
     return Object.assign({}, state, {loading: true});

@@ -1,6 +1,6 @@
 {
   "name": "client",
-      "engines": {
+  "engines": {
     "node": "8.16.0"
   },
   "version": "0.1.0",
